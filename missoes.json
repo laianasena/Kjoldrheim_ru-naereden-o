@@ -1,0 +1,1141 @@
+[
+  {
+    "id": 3,
+    "name": "MISSÃO SECUNDÁRIA SS03 - ECOS DO VÉU RASGADO",
+    "boss": [],
+    "tests": [
+      {
+        "id": 31,
+        "description": "Testes de Perícia: Tentação do Véu — Teste de Resistência. Durante o 2º ou 3º turno da missão, realiza um Teste de Moral ou Resistência (D10 ≥ 6).",
+        "success": [
+          "Nenhum efeito negativo. Se todos os heróis resistirem com sucesso: O grupo recebe +1 PH (pela integridade coletiva)."
+        ],
+        "fail": ["Ganha +1 Corrupção."]
+      },
+      {
+        "id": 32,
+        "description": "Testes de Perícia: Tentação do Véu — Se algum herói ceder e ouvir: Ele recebe uma visão de poder profano. Pode rolar um D10.",
+        "success": [
+          "Resultado 9-10 = ganha +1 EXP instantaneamente, mas recebe +1 Corrupção."
+        ],
+        "fail": ["Resultado 1 a 8 = apenas +1 Corrupção."]
+      },
+      {
+        "id": 33,
+        "description": "Conhecimento (Dificuldade 8): selar a fenda (todos os heróis). Ler as runas quebradas e entender como selar a fenda.",
+        "success": ["Se metade dos heróis acertarem, a Fenda é selada com segurança."],
+        "fail": ["Ganha +1 Corrupção."]
+      },
+      {
+        "id": 34,
+        "description": "Linguística (Dificuldade 7): iniciativa 1,2 e 3 — Traduzir o cântico antigo.",
+        "success": ["Anula automaticamente um dos Tentáculos e +1 PH."],
+        "fail": ["Nada acontece."]
+      }
+    ],
+    "events": [
+      {
+        "id": 41,
+        "description": "Evento Opcional — Ressonância da Memória. Durante o 3º turno (ou a qualquer momento que o grupo deseje interagir), Teste Coletivo de Magia ou Moral (D10 ≥ 7). Cada herói contribui com 1 rolagem (escolhendo entre Magia ou Moral).",
+        "success": [
+          "Se pelo menos 3 heróis tiverem sucesso, a Memória se dissipa em paz. +1 PH para o grupo. O herói com menor iniciativa recebe +1 PV ou remove 1 Corrupção."
+        ],
+        "fail": [
+          "A Memória entra em colapso e ataca com o dobro de dano no turno seguinte. Todos os heróis sofrem -1 nas próximas rolagens de ataque."
+        ]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 51,
+        "name": "Tentáculo do Abismo",
+        "attack": "Causando +2 de dano mágico em área.",
+        "buffs": ["nenhum"],
+        "debuffs": [
+          "Crítico (10): Herói corta o tentáculo pela base, impedindo que ele renasça (não respawna mais) — dano em dobro."
+        ],
+        "img": "imagens/tentaculo_abismo.png"
+      },
+      {
+        "id": 52,
+        "name": "Memória Materializada",
+        "attack": "+2 de dano mágico em área.",
+        "buffs": [
+          "Efeito: Teste de Moral (D10 ≥ 7) para agir normalmente contra ela. Falha: -1 nos ataques contra a memória e +2 de dano."
+        ],
+        "debuffs": [
+          "Crítico (10): Permite atacar normalmente (ignora penalidade) — dano em dobro."
+        ],
+        "img": "imagens/memoria_materializada.png"
+      }
+    ],
+    "reward": {
+      "coins_per_hero": 20,
+      "coins_extra_if_closed_before_turn_4": 10,
+      "honorPoints": {
+        "base_if_resist": 1,
+        "translate_cantic_bonus": 1,
+        "save_memory_instead_of_destroying": 1
+      },
+      "items": [
+        "Selo Rúnico",
+        "Chave de Ferro Antiga",
+        "1 Gema Azul (se a fenda for selada corretamente)"
+      ],
+      "experience": {
+        "base": 1,
+        "knowledge_success_bonus": 1,
+        "no_corruption_bonus": 1
+      },
+      "notes": "Observações: valores por herói quando aplicável. Ajuste no sistema conforme necessidade."
+    }
+  },
+  {
+    "id": 11,
+    "name": "MISSÃO 11 – CATACUMBAS SUBMERSAS",
+    "boss": [
+      {
+        "id": 111,
+        "name": "Mini-Chefe – Tormenta dos Olhos Selados",
+        "attack": "5 de dano mágico + causa Confusão. Iniciativa 6 (Teste de Resistência D10 ≥ 6).",
+        "buffs": [
+          "Habilidade Especial: a cada 3 turnos – “Olhos da Perdição” (Teste de Moral D10 ≥ 7)"
+        ],
+        "debuffs": [
+          "Crítico (10): dano em dobro, inativa Olhos da Perdição e causa confusão; inimigo no próximo turno ataca a si mesmo."
+        ],
+        "img": "imagens/tormenta_olhos_selados.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 112,
+        "description": "Testes de Perícia – Sobrevivência (Dificuldade 7) antes da batalha todos os heróis.",
+        "success": ["Encontra bolsões de ar e rotas alternativas (evita penalidade)."],
+        "fail": ["O herói começa com -2 PV."]
+      },
+      {
+        "id": 113,
+        "description": "Investigação (Dificuldade 8) – iniciativa 6 e 5. Descobrir o altar submerso com um Fragmento do Véu oculto.",
+        "success": ["Purificar o altar (nenhum efeito colateral, concede o Fragmento se passar no teste)."],
+        "fail": ["-"]
+      },
+      {
+        "id": 114,
+        "description": "Investigação (Dificuldade 8) – iniciativa 6 e 5. Romper o selo por ganância.",
+        "success": ["+2 Corrupção, ativa armadilha mágica que causa 2 de dano direto a todos, mas o herói que rompe ganha +1 EXP extra."],
+        "fail": ["-"]
+      }
+    ],
+    "events": [
+      {
+        "id": 115,
+        "description": "Evento Opcional – Alma Presa",
+        "success": ["Ganha +1 PH. Heróis iniciativas 1, 2 e 3."],
+        "fail": ["-"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 116,
+        "name": "Cadáver Profanado",
+        "attack": "2 de dano físico",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10): dobro de dano."],
+        "img": "imagens/cadaver_profanado.png"
+      },
+      {
+        "id": 117,
+        "name": "Marionete de Ossos Nível",
+        "attack": "+2 de dano corpo a corpo",
+        "buffs": ["Habilidade Especial: a cada 3 turnos concede +1 Defesa para si ou outro inimigo por 2 turnos."],
+        "debuffs": ["Crítico (10): se desfaz em uma pilha de ossos."],
+        "img": "imagens/marionete_ossos.png"
+      }
+    ],
+    "reward": {
+      "coins": 50,
+      "honorPoints": 2,
+      "items": [
+        "1 Carta Tesouro aleatória",
+        "1 Item Comum “Sela Rápida”",
+        "1 Carta Mágica aleatória",
+        "Fragmento do Véu (se a Investigação for bem-sucedida)"
+      ],
+      "experience": 5
+    }
+  },
+
+  {
+    "id": 12,
+    "name": "MISSÃO 12 – PONTE DE VALMERE",
+    "boss": [],
+    "tests": [
+      {
+        "id": 122,
+        "description": "Físico (Dificuldade 7) antes da batalha — Manter o equilíbrio nos trechos quebradiços. Se o herói escolher abandonar parte do loot, dificuldade cai para 5.",
+        "success": ["Atravessa com segurança."],
+        "fail": ["Perde 1 turno segurando-se para não cair."]
+      },
+      {
+        "id": 123,
+        "description": "Percepção (Dificuldade 8) antes da batalha — Identificar armadilhas naturais e fendas ocultas.",
+        "success": ["Evita colapso súbito."],
+        "fail": ["Um segmento extra da ponte desaba, +2 de dano."]
+      }
+    ],
+    "events": [
+      {
+        "id": 124,
+        "description": "Evento Especial – Espírito Guia (somente se vieram pela Rota Sul). No início do 4º turno, uma presença translúcida surge entre as névoas e concede um bônus espiritual coletivo.",
+        "success": [
+          "Todos os heróis recuperam 2 PV.",
+          "Um herói à escolha ganha +1 em todas as rolagens por 2 turnos.",
+          "Se algum herói cair em um colapso da ponte após o evento, o espírito pode salvá-lo automaticamente uma vez (1 PV restante)."
+        ],
+        "fail": ["-"]
+      },
+      {
+        "id": 125,
+        "description": "Evento Especial – Colapso da Ponte. A cada 3 turnos, um segmento da ponte desaba. Exige Teste de Agilidade ou Instinto (D10 ≥ 6) para não cair.",
+        "success": ["Nada acontece."],
+        "fail": [
+          "Queda = o herói vai a 0 PV instantaneamente. Só pode ser salvo com Sela Rápida ou magia de resgate."
+        ]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 126,
+        "name": "Sentinela Cega",
+        "attack": "Causa 2 de dano físico.",
+        "buffs": ["Força um Teste de Força D10 ≥ 6. Falha: o herói é empurrado para a borda (perde 1 ação)."],
+        "debuffs": ["O herói contra-ataca e derruba o inimigo no abismo, eliminando-o instantaneamente."],
+        "img": "imagens/sentinela_cega.png"
+      },
+      {
+        "id": 127,
+        "name": "Ecos Dissidentes",
+        "attack": "Efeito passivo: a cada turno, todos os heróis fazem Teste de Resistência Mental D10 ≥ 7.",
+        "buffs": ["Falha: dano +2 e o herói perde 1 ação no turno (não pode atacar ou conjurar)."],
+        "debuffs": ["Crítico (10): cancela o efeito mental por 2 turnos e causa o dobro de dano."],
+        "img": "imagens/ecos_dissidentes.png"
+      },
+      {
+        "id": 128,
+        "name": "Possuído Vaeltriano",
+        "attack": "+2 físico.",
+        "buffs": ["Habilidade especial a cada 2 turnos: atacam com disciplina militar, causando dano duplicado (herói iniciativa 6 ou 5)."],
+        "debuffs": ["Crítico (10): Despertam memórias do passado e ficam paralisados por 1 turno (culpa ancestral)."],
+        "img": "imagens/possuido_vaeltriano.png"
+      }
+    ],
+    "reward": {
+      "coins": 45,
+      "honorPoints": 2,
+      "items": [
+        "Fragmento do Véu preso em uma das colunas (exige sucesso no teste de Percepção).",
+        "1 Item Único por Classe (1 por grupo): Manto da Invocação, Armadura do Homem da Caverna, Armadura do Espadachim, Armadura da Sombra, Manto Celestial, Armadura da Guardiã.",
+        "Item Comum (Frasco de Tinta Rúnico) – grupo.",
+        "Gema Vermelha (se ninguém cair no abismo)."
+      ],
+      "experience": 6
+    }
+  },
+  {
+    "id": 13,
+    "name": "MISSÃO 13 – TEMPLO QUEBRADO DE AERIS",
+    "boss": [
+      {
+        "id": 131,
+        "name": "Chefe Principal: Nymor, o Alquimista Profanado",
+        "attack": "4 dano mágico + aplica Toque da Dissolução. Herói com menos PH sofre dano duplicado. Em caso de PH igual, heróis rolam 1d10, o menor recebe a punição.",
+        "buffs": [
+          "Ataque especial: Ritual da Carne Transmutada (a cada 2 turnos). Nymor estala os dedos esqueléticos e fragmentos de corpos ao redor se contorcem, fundindo-se numa massa viva que explode em tentáculos púrpura. Efeito: Todos os heróis devem fazer um Teste de Resistência (D10 ≥ 6). Quem falhar recebe +6 de dano mágico e perde 1 turno atordoado. Quem passar recebe apenas +3 de dano e continua normalmente."
+        ],
+        "debuffs": ["Crítico (10): Impede o Toque da Dissolução e causa dano dobrado neste turno."],
+        "img": "imagens/nymor.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 132,
+        "description": "Testes de Perícia: Conhecimento (Dificuldade 9) — Identificar o ritual de purificação correto antes do combate final (iniciativa 6,5 e 4).",
+        "success": ["Reduz o PV inicial de Nymor em 15."],
+        "fail": ["Nymor inicia o combate com iniciativa 1 e escudo mágico (+2 Defesa por 2 turnos)."]
+      },
+      {
+        "id": 133,
+        "description": "Astúcia (Dificuldade 8) — Desativar armadilhas alquímicas escondidas nas colunas do templo (todos os heróis).",
+        "success": ["Metade do grupo passar, sucesso: Evita dano inicial em área (3 de dano)."],
+        "fail": ["Todo o grupo sofre 3 de dano antes do combate."]
+      }
+    ],
+    "events": [
+      {
+        "id": 134,
+        "description": "Interações Especiais — Libertação de Almas Deformadas: Se um herói finalizar uma Aberração Alquímica com magia de luz ou ataque especial, a alma deformada é libertada em um feixe dourado. Pode ser feito até 2 vezes na missão.",
+        "success": ["Concede +1 PH no total."],
+        "fail": ["-"]
+      },
+      {
+        "id": 135,
+        "description": "Terreno: Campo Sagrado Corrompido — Magias de luz recebem +1 de eficácia. Magias sombrias causam +2 de dano, mas geram +1 Corrupção por uso.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 136,
+        "description": "Clima: Véu Corrompido Permanente — Todas as curas são consideradas magias sombrias (gerando Corrupção). Testes de Resistência exigem +1 (ex: Dificuldade 7 vira 8).",
+        "success": ["-"],
+        "fail": ["-"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 137,
+        "name": "Aberração Alquímica",
+        "attack": "2 de dano físico",
+        "buffs": ["Ao morrer: Explodem, causando 2 de dano em área a todos os heróis."],
+        "debuffs": ["Crítico (10): Impede a explosão e causa dano dobrado neste turno."],
+        "img": "imagens/aberracao_alquimica.png"
+      }
+    ],
+    "reward": {
+      "coins": 80,
+      "honorPoints": 3,
+      "Corrupçao": 4,
+      "items": [
+        "Item raro (por herói): Cetro dos Antigos, Martelo de Thor, Arco do Sussurro, Cajado das Eras, Espada de Sangretor e Machado Colossal",
+        "Gema Azul",
+        "1 Carta de Leilão – encontrado como relíquia, disputa por d10 entre os heróis",
+        "Fragmento do Véu (obtido automaticamente ao derrotar Nymor – vinculado ao seu corpo)",
+        "1 Carta magia (aleatória)"
+      ],
+      "experience": 8
+}
+},
+  {
+    "id": 14,
+    "name": "MISSÃO 14 – PORTO DE BRUMAS",
+    "boss": [
+      {
+        "id": 141,
+        "name": "Mini-Chefe – Capitão das Brumas (aparece no 3º turno)",
+        "attack": "4 de dano físico + Empurrão (Teste de Físico D10 ≥ 7 para não ser lançado ao mar).",
+        "buffs": [
+          "Habilidade Especial – “Correntes do Esquecimento”: Prende um herói por 2 turnos (só pode ser libertado com Teste de Astúcia D10 ≥ 8 ou com magia de barreira)."
+        ],
+        "debuffs": ["Crítico (10): Rompe as correntes e causa dano dobrado ao Capitão."],
+        "img": "imagens/capitao_das_brumas.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 142,
+        "description": "Terreno: Convés Instável e Nebuloso. A cada turno, cada herói deve realizar um Teste de Físico (D10 ≥ 6) para manter o equilíbrio. Se todos os heróis passarem ao menos 2 testes de equilíbrio durante a missão, ganham +15 GP extras no final da missão.",
+        "success": ["-"],
+        "fail": ["Perde 1 ação."]
+      },
+      {
+        "id": 143,
+        "description": "Clima: Névoa Sobrenatural. Fragmentos do Véu criam ilusões e enganam os sentidos, ataques físicos precisam de uma rolagem de D10 ≥ 7 pra acertar.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 144,
+        "description": "Testes de Perícia antes da batalha — Percepção (Dificuldade 7): Identificar o verdadeiro Fragmento entre ilusões (todos os heróis).",
+        "success": ["Metade dos heróis passa, obtêm o fragmento sem ativar armadilhas."],
+        "fail": ["Uma explosão mágica causa 3 de dano em área."]
+      },
+      {
+        "id": 145,
+        "description": "Instinto (Dificuldade 8): Impedir que o navio fantasma se afaste antes da batalha final (heróis iniciativa 1,2 e 3).",
+        "success": ["Controlam parte do navio e estabilizam a luta, ganhando +1 PH."],
+        "fail": ["Devem lutar em um convés ainda mais instável (aumenta a dificuldade dos testes de equilíbrio em +1 e o Capitão pode fugir após 4 turnos de batalha)."]
+      }
+    ],
+    "events": [
+      {
+        "id": 146,
+        "description": "Evento antes da batalha: um pacto com as vozes da névoa para facilitar a batalha (opcional). Decisão em grupo diminui a aparição dos marinheiros para 2. Essa escolha resulta em +2 de Corrupção.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 147,
+        "description": "Evento Extra: Ecos Espectrais. A cada 2 rodadas de combate com o Capitão, role D10 HERÓI com iniciativa 1 e 2.",
+        "success": ["-"],
+        "fail": ["Se o resultado for 1 ou 2, surgem Ecos Espectrais: Quantidade: 1, Nível: 15, PV: 20, Dano: 2 mágico. Desaparecem se o Capitão for derrotado. Ataque crítico (10) sofre 10 de dano e desaparecem."]
+      },
+      {
+        "id": 148,
+        "description": "Evento FINAL APÓS A BATALHA – A Âncora Aprisionada (todos os heróis). Durante a abordagem final, os heróis percebem que uma âncora envolta em correntes espirituais brilha entre as brumas. Com um Teste de Conhecimento (D10 ≥ 7) ou uso de magia de luz, podem libertar a alma que ali chora.",
+        "success": ["Concede +1 PH apenas aos heróis que passarem e libertarem as almas."],
+        "fail": ["-"]
+      },
+      {
+        "id": 149,
+        "description": "Evento FINAL APÓS A BATALHA (Opcional) – Saquear os pertences dos mortos.",
+        "success": ["+30 GP"],
+        "fail": ["Ignorar: +1 PH"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 140,
+        "name": "Marinheiros Espectrais",
+        "attack": "2 de dano mágico, iniciativa da maior para menor",
+        "buffs": ["Aplica Silêncio apenas no primeiro turno — o herói atingido não pode usar magias por 1 turno."],
+        "debuffs": ["Crítico (10): ataque fatal, marinheiro se dissolve em fumaça."],
+        "img": "imagens/marinheiros_espectrais.png"
+      }
+    ],
+    "reward": {
+      "coins": 95,
+      "honorPoints": 3,
+      "Corrupçao": 3,
+      "items": [
+        "Diamante Vermelho (Item Raro — encontrado no corpo do Capitão)",
+        "Gema Azul",
+        "1 Carta Tesouro Aleatória",
+        "Fragmento do Véu",
+        "Gema Azul"
+      ],
+      "experience": 6
+    }
+  },
+  {
+    "id": 15,
+    "name": "MISSÃO 15 – CRIPTA DOS TRÊS REIS",
+    "boss": [
+      {
+        "id": 151,
+        "name": "Mini-Chefe (aparece no 3º turno) – Guardião das Almas Partidas",
+        "attack": "4 de dano mágico + aplica Peso das Almas (heróis mágicos perdem 1 de dano e não podem usar magia de cura; heróis perdem -1 rolagem de ataque).",
+        "buffs": [
+          "Ataque Especial (a cada 3 turnos): Lamento das Três Coroas — Todos os heróis fazem Teste de Moral (D10 ≥ 7). Falha: sofrem o dobro de dano e -1 em todas as rolagens até o fim do combate. A cada turno subsequente, o herói pode repetir o teste para tentar dissipar o efeito."
+        ],
+        "debuffs": ["Crítico (10): Dissipa o Lamento e causa o dobro de dano direto ao Guardião."],
+        "img": "imagens/guardiao_das_almas_partidas.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 152,
+        "description": "Terreno: Cripta Rúnica Instável. A cada 3 turnos, todos os heróis fazem Teste de Resistência (D10 ≥ 6).",
+        "success": ["-"],
+        "fail": ["Ativa armadilha rúnica e recebe 3 de dano mágico."]
+      },
+      {
+        "id": 153,
+        "description": "Clima: Aura de Sepulcro. Magias de cura têm eficácia reduzida (-1).",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 154,
+        "description": "Conhecimento (Dificuldade 8): Desativar selos rúnicos (heróis iniciativa 6,5 e 4).",
+        "success": ["Evitam ativar armadilhas."],
+        "fail": ["Sofrem 2 de dano mágico."]
+      },
+      {
+        "id": 155,
+        "description": "Investigação (Dificuldade 9): Localizar o túmulo correto com o Fragmento (heróis iniciativa 1,2 e 3).",
+        "success": ["Recuperam o Fragmento em segurança."],
+        "fail": ["Liberam uma maldição (todos recebem +1 Corrupção)."]
+      }
+    ],
+    "events": [
+      {
+        "id": 156,
+        "description": "Evento após a batalha (Opcional): saquear itens simbólicos das tumbas: uma gema vermelha. Ignorar: +1 PH.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 157,
+        "description": "Evento Opcional — Relíquias Silenciosas dos Reis. Enquanto exploram os salões escuros da cripta, os heróis descobrem um pequeno altar escondido atrás de uma das tumbas laterais. Nele, repousam relíquias itens antigos. Inscrição rúnica na parede: 'Decisão dos Jogadores: Tomai o poder... e parti com o peso da escolha.' Para usar os itens, é necessário purificá-los com 2 gemas azuis ou 1 vermelha, ou custo de 10 PH.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 158,
+        "description": "Ritual de Respeito (Opcional). Ao final da missão, os heróis podem realizar um ritual de respeito (oração = gema azul, oferenda = 30 GP ou uso de magia de luz) diante dos túmulos. +1 PH se realizado.",
+        "success": ["-"],
+        "fail": ["-"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 159,
+        "name": "Cadáver Profanado",
+        "attack": "2 de dano físico",
+        "buffs": ["Lentidão: a cada dois turnos, o herói perde qualquer ação de movimento extra no próximo turno."],
+        "debuffs": ["Crítico (10): impede o uso do efeito lentidão por 2 turnos e aplica o dobro de dano."],
+        "img": "imagens/cadaver_profanado.png"
+      },
+      {
+        "id": 150,
+        "name": "Marionete de Ossos",
+        "attack": "3 de dano físico direto",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10): golpe fatal, a marionete se desfaz."],
+        "img": "imagens/marionete_ossos.png"
+      }
+    ],
+    "reward": {
+      "coins": 70,
+      "honorPoints": 2,
+      "Corrupçao": 3,
+      "items": [
+        "1 x Carta Magia (aleatória por raça)",
+        "1 Carta Tesouro Aleatória",
+        "Fragmento do Véu"
+      ],
+      "experience": 6
+    }
+  }
+  ,
+  {
+     "id": 2,
+    "name": "MISSÃO SECUNDÁRIA SS02 CAÇADA AO BEHEMOTH DONORTE",
+    "boss": [
+      {
+        "id": 21,
+        "name": "Mini-Chefe Behemoth do Norte",
+        "description": "Condição de Fuga do Behemoth Se o Behemoth não for derrotado em até 6 turnos de combate, ele se enfurece, golpeia o solo violentamente e recua em meio à tempestade, fugindo para os ermos. Sua fuga pode gerar uma missão futura com nível de ameaça elevado.( retorno missão 27)",
+        "attack": "5 de dano em área (Testes de Esquiva D10 ≥ 7) aplica congelamento - 1 PV por turno. Habilidade Especial – Tremor Glacial.",
+        "buffs": [
+         "A cada 2 turnos, exige Teste de Físico (D10 ≥ 6) para não ser derrubado (perde 1 ação no próximo turno)."
+        ],
+        "debuffs": ["Crítico (10): O herói pode escalar o Behemoth e aplicar ataque direto (ignora defesa) retirando metade do PV."],
+        "img": "imagens/behemoth_do_norte.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 22,
+        "description": "Terreno: Planície Congelada Todo movimento extra custa o dobro (ação de ataque Físicos recebem – 1 EM ROLAGEM DE ATAQUE ).",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 23,
+        "description": "Clima: Nevasca Leve-1 em Testes de Magia e Percepção Magias de fogo recebem +1 de dano.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 24,
+        "description": "Durante o deslocamento pela região congelada, o grupo encontra um acampamento civil próximo a um paredão instável de gelo. TESTE DE PERSUASÃO (D10 ≥ 6):(Heróis com iniciativa 1,2 e 3 )",
+        "success": ["os civis são salvos e os heróis que passaram no teste recebe +1 PH."],
+        "fail": ["Falha total: o local é soterrado + 1 de corrupção pro grupo. Falha parcial: Heróis que falharam no teste +1 de corrupção."]
+      },
+      {
+        "id": 25,
+        "description": "Instinto (Dificuldade 6): Evitar avalanches durante o deslocamento (Heróis com iniciativa 6,5 e 4 )",
+        "success": ["Atravessam o campo sem danos."],
+        "fail": ["sofrem 2 de dano e os lobos atacam antes dos que falharam no teste."]
+      },
+       {
+        "id": 26,
+        "description": "Sobrevivência (Dificuldade 7): Rastrear com segurança o Behemoth ( todos os heróis. )",
+        "success": ["Sucesso pelo menos 3 heróis : Inicia o combate com vantagem de iniciativa heróis começam atacando e + 1 PH apenas aos que passarem no teste."],
+        "fail": ["Surpresa! Behemoth ataca primeiro com golpe de área ( iniciativa começa com o monstro) e ganha + 1 de Dano."]
+      }
+    ],
+    "events": [
+      {
+        "id": 27,
+        "description": "Mini-Evento:Antes do combate, todos os heróis devem fazer um Teste de Sobrevivência (D10 ≥ 6):",
+        "success": ["apenas 2 lobos aparecem."],
+        "fail": ["Começa o combate contra os Lobos com -2 em rolagem de ataque no primeiro turno"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 28,
+        "name": "Lobos Gélidos",
+        "attack": "2 de dano físico",
+        "buffs": ["Ataque especial: ataque matilha dano físico em dobro (heróis iniciativa do maior para o menor). A cada 2 turnos."],
+        "debuffs": ["Crítico (10): Dano dobrado e lobo se separar da matilha incapaz de usar habilidade especial."],
+        "img": "imagens/lobos_gelidos.png"
+      }
+    ],
+    "reward": {
+      "coins": 50,
+      "honorPoints": 2,
+      "Corrupção": 2,
+      "items": [
+        "Item raro: Armadura de gatuno, Manto sangrado, Armadura de drahall, Robe de damra, Armadura Sangrentor, Armadura Homem da Montanha",
+        "1 Carta Tesouro Aleatória",
+        "Fragmento do Véu"
+      ],
+      "experience": 8
+    }
+   }
+   ,
+   {
+     "id": 4,
+    "name": "MISSÃO SECUNDÁRIA SS04– O GUARDIÃO CEGO",
+    "boss": [
+      {
+        "id": 21,
+        "name": "Mini-Chefe: O Guardião Cego",
+        "description": "Condição de Fuga do Behemoth Se o Behemoth não for derrotado em até 6 turnos de combate, ele se enfurece, golpeia o solo violentamente e recua em meio à tempestade, fugindo para os ermos. Sua fuga pode gerar uma missão futura com nível de ameaça elevado.( retorno missão 27)",
+        "attack": ": 4 de dano físico + aplica Selo do Guardião (–1 de dano em ataques do herói).iniciativas 6-5 (...",
+        "buffs": [
+         "Habilidade Especial – “Olhar Interior” A cada 2 turnos, força um herói iniciativa 6,5 e 4 a fazer um Teste de Honra (D10 ≥ 7). Falha: o herói fica paralisado por 1 turno (visão distorcida de seu fracasso). Sucesso: o herói reverte o olhar, paralisando o Guardião por 1 turno"
+        ],
+        "debuffs": ["Crítico (10):  o herói aplica o dobro de dano."],
+        "img": "imagens/guardiao_cego.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 23,
+        "description": "Teste de Moral Coletivo Cada herói rola D10 + 2 PH.",
+        "success": ["10+ O herói é considerado digno — isento do combate"],
+        "fail": [
+          "9-7 O Guardião hesita, mas exige uma prova (Teste de Diplomacia D10 ≥ 7). Falha: enfrentará o Guardião e perde o PH.",
+          "≤ 6 O herói é considerado indigno — enfrentará o Guardião e perde o dobro de PH."
+        ]
+    
+      },
+      {
+         "id": 22,
+        "description": " Efeitos de Terreno Ruínas Instáveis Todos os heróis devem fazer um Teste de Resistência (D10 ≥ 5) a cada rodada de combate.",
+        "success": ["-"],
+        "fail": ["sofre 1 de dano."]
+    },
+      {
+        "id": 24,
+        "description": " Alternativa Diplomática Se, pelo menos, dois heróis obtiverem sucesso nos testes de Moral e Diplomacia, o grupo pode tentar convencer o Guardião de que suas ações visam restaurar Kjoldrheim. Custo obrigatório: uma oferta simbólica (sacrificar 50 GP cada herói, perder um item raro, ou aceitar +2 Corrupção). Se a oferta for feita, o combate total é evitado.",
+        "success": ["-"],
+        "fail": ["-"]
+      }
+      
+    ],
+    "events": [ "-" ],
+    "monsters": [ "-" ],
+    "reward": {
+      "coins": 50,
+      "honorPoints": 1,
+      "Corrupção": 2,
+      "items": [
+        "Escolha do Grupo (após a missão):Aliado Temporário: O Guardião Cego pode ser invocado 1x em uma missão futura como protetor espiritual.OU Bênção Divina: Todos os heróis recebem +1 PH e 1 Gema Rubra."
+        
+      ],
+      "experience": 3
+    }
+   }
+,
+  {
+    "id": 16,
+    "name": "MISSÃO 16 – FENDAS DE KORR",
+    "boss": [
+      {
+        "id": 161,
+        "name": " Mini chefe Aberração Víscera-Rúnica aparece logo após a derrota de todos os monstros.",
+        "attack": "5 de dano misto em área.Efeito: Dilaceração Rúnica — herói perde 1 PV por turno até passar em Teste de Resistência (D10 ≥ 7)",
+        "buffs": [
+          "Ataque Especial – Explosão de Órgãos Rúnicos (acada 3 turnos) ▸ Todos os heróis: Teste de Físico (D10 ≥ 7) ▸ Falha: 6 de dano perfurante + perda de 1 PM"
+        ],
+        "debuffs": [
+          "Crítico (10):Anula a Dilaceração e o herói recupera 2 PV e causa o dobro de dano."
+        ],
+        "img": "imagens/aberracao_viscera_runica.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 162,
+        "description": " Terreno: Fendas Instáveis a cada 2 turnos, todos fazem Teste de Físico (D10 ≥ 6).",
+        "success": ["Nada acontece."],
+        "fail": [" herói escorrega para perto da fissura perde um turno tentando não cair. (Obs.: se o herói falhar 2x seguidas no teste sofre queda vai a 0 PV.)"]
+      },
+      {
+        "id": 163,
+        "description": "Clima: Vapores Corrompidos.Todos os heróis começam com -1 PM.Todas as magias custam +1 PM adicional.Com Teste de Conhecimento (D10 ≥ 8), podem anular essa penalidade por 1 rodada",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 164,
+        "description": " Sobrevivência (Dificuldade 8): heróis iniciativas 6,5 e 4.",
+        "success": ["Evitam armadilhas naturais."],
+        "fail": ["Sofrem 2 de dano."]
+      },
+      {
+        "id": 165,
+        "description": "Ofício (Dificuldade 7): heróis iniciativa 1,2 e 3.",
+        "success": [" Reduzem frequência dos testes de terreno (de 2 em 2 turnos para 3 em 3)"],
+        "fail": ["Estrutura cede, exige rolagem Teste Físico terreno (D10 ≥ 6) a cada rodada"]
+      }
+    ],
+    "events": [
+      {
+        "id": 166,
+        "description": "Evento Opcional — Caravana nas Fendas Teste de Instinto (D10 ≥ 7), o grupo pode resgatá-los.",
+        "success": ["Concede +1 PH apenas aqueles que tiverem sucesso. "],
+        "fail": ["-"]
+      },
+      {
+        "id": 167,
+        "description": "Evento após batalha selamento, escolha deve ser unânime decisão do grupo:Opção 1 – Selo Rúnico de Purificação Com magias rituais ou símbolos sagrados, os heróis podem selar completamente a fenda, encerrando o fluxo de corrupção. Requer Testes de Conhecimento ou Magia (D10≥ 8) ",
+        "success": [" Concede +1 PH e a Gema Vermelha (criada no momento em que o Véu é comprimido e cristalizado) Apenas aos que passarem no teste"],
+        "fail": [" Nenhum ganho de Corrupção. A fenda permanece ativa, exigindo atenção futura."]
+      },
+      {
+        "id": 168,
+        "description": " Opção 2 – Sifão de Poder Corrompido O grupo pode absorver parte da energia da fonte para amplificar magias, restaurar PM ou fortalecer itens temporariamente",
+        "success": ["Cada herói que escolher absorver recebe +1 Corrupção, mas pode aumentar o PV em + 3 ou aplicar +1 em ataque de uma arma a escolha. A fonte é enfraquecida, mas não selada completamente.Não gera Gema Vermelha."],
+        "fail": ["-"]
+      },
+      {
+        "id": 169,
+        "description": " Opção 3 – Manter a Fonte Ativa O grupo pode optar por deixar a fonte intacta,com a intenção de retornar futuramente para explorá-la, estudá-la ou extrair poder.",
+        "success": ["Aliança com Criaturas Corrompidas O grupo pode atrair uma criatura do Véu para servi-los temporariamente (1 missão), como um pacto.Criaturas que podem ser invocadas: Fera Corrompida ou Soldado Deformado como reforço de combate Custo: +2 PH de cada herói. Penalidade: +2 Corrupção para o grupo "],
+        "fail": ["-"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 160,
+        "name": "Soldado Deformado",
+        "attack": "4 físico em area",
+        "buffs": ["Ataque especial: Delírio Marcial — ataque em área herói sofre -1 em rolagens de ataques no próximo turno.(a cada 2 turnos)"],
+        "debuffs": ["Crítico (10):  ataque especial não funciona no herói e causa o dobro de dano."],
+        "img": "imagens/soldado_deformado.png"
+      },
+      {
+        "id": 1661,
+        "name": "Fera Corrompida",
+        "attack": " 3 físico causa efeito sangramento perde 1 PV por turno.",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10):herói tira metade do PV da Fera"],
+        "img": "imagens/fera_corrompida.png"
+      },
+      {
+        "id": 1662,
+        "name": "Aberração Alquímica ",
+        "attack": " : 2 mágico gás toxico efeito em área, herói que tiver com corrupção sofre envenenamento -2PV por turno.(efeito envenenamento não é acumulativo).",
+        "buffs": ["Ao morrer: Explode, causando 3 de dano em área a todos os heróis."],
+        "debuffs": ["Crítico (10):impede explosão ao morrer e causa o dobro de dano."],
+        "img": "imagens/aberracao_alquimica.png"
+      }
+    ],
+    "reward": {
+      "coins": 80,
+      "honorPoints": 2,
+      "Corrupçao": 3,
+      "items": [
+        " Item Único: 1.Cetro Celestial 2.Martelo e escudo guardião 3.Armas das sombras 4.Cajado do invocador 5.Lamina do espadachim 6.Machado da caverna",
+        "1 Tesouro – aleatória do baralho",
+        " Gema Vermelha (se selarem a fonte de corrupção)",
+        "Fragmento do Véu"
+      ],
+      "experience": 6
+    }
+  }
+,
+  {
+    "id": 17,
+    "name": " MISSÃO 17 – CAVERNAS DE CRISTAL VIVO",
+    "boss": [
+      {
+        "id": 171,
+        "name": "  Mini-Chefe – Entra no 3 turno.Fragmento da Verdade Velada",
+        "attack": ": 4 mágico em área + Ilusão Persistente (o herói com iniciativa maior não pode usar habilidades especiais por 2 turnos)",
+        "buffs": [
+          " Ataque Especial (a cada 3 turnos) Reflexo da Ruína — Teste de Moral (D10 ≥ 8)▸ Falha: sofre 5 de dano mental e perde - 1 em rolagem."
+        ],
+        "debuffs": [
+          "Crítico (10):Dissipa parte da ilusão e causa dobro dano direto ao Fragmento."
+        ],
+        "img": "imagens/fragmento_da_verdade_velada.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 172,
+        "description": "  Terreno: Cristais Vivos.",
+        "success": [" Rolagem 10 (Crítico): Gera um eco. O herói recebe 1 ação extra no próximo turno"],
+        "fail": ["  Rolagem de ataques 1 a 3: Ativa uma ilusão. O herói perde 1 ação no próximo turno e sofre -1 no próximo Teste de Moral"]
+      },
+      {
+        "id": 173,
+        "description": " Aura de Magia Instável Magias causam +1 de dano",
+        "success": ["-"],
+        "fail": [" Se falharem na rolagem de ataque, causam 3 de dano reflexivo ao conjurador"]
+      },
+      {
+        "id": 174,
+        "description": "  Conhecimento (Dificuldade 9): Identificar o verdadeiro núcleo (grupo todo).",
+        "success": [" Sucesso metade do grupo: o Mini-Chefe inicia com-10 PV"],
+        "fail": [" ativa uma armadilha mágica (grupo sofre 2 de dano)"]
+      },
+      {
+        "id": 175,
+        "description": "Astúcia (Dificuldade 8): Navegar pelas passagens ilusórias iniciativa 6,5 e 4",
+        "success": ["evitam encontros extras."],
+        "fail": [" adiciona uma Memória Materializada ao combate"]
+      }
+    ],
+    "events": [
+      {
+        "id": 176,
+        "description": " Uso de Cristais Corrompidos (opcional) Durante o combate, qualquer herói pode canalizar a energia corrompida: ▸ +2 em uma rolagem de ataque, mas recebe +1Corrupção ▸ Cada herói pode fazer isso uma única vez",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 177,
+        "description": "Evento Oculto – Memória Aprisionada:iniciativa 1,2 e 3 Durante a exploração, um cristal murmura em voz antiga.Com Teste de Percepção (D10 ≥ 7) ou magia de luz,libertam uma alma presa. ",
+        "success": ["Concede +1 PH aos que passarem no teste"],
+        "fail": ["-"]
+      },
+      {
+        "id": 178,
+        "description": "  Evento cristais corrompidos : Heróis podem pegar cristais corrompidos para aumentar em + 3 PV fixos.Ao escolher pegar os cristais heróis sofrem com a corrupção + 2 .",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 179,
+        "description": "  Evento — Purificação do Núcleo Corrompido (grupo) Quando o Fragmento da Verdade Velada é derrotado, o núcleo de cristal pulsante continua ativo, instável, cercado por espelhos vivos e runas ancestrais distorcidas. Ritual de Purificação Um Teste de Conhecimento ou Magia (D10 ≥ 9) ",
+        "success": [" O núcleo é purificado. Uma Gema Azul se forma.(gema azul apenas pros que passarem no teste) A caverna se torna uma fonte segura de magia pura(pode ser utilizada para aumentar pontos de Pm : uma gema azul concede + 3 PM e uma gema vermelha concede + 5 PM.)+1 PH ao herói que passarem no teste"],
+        "fail": [" Falha todos do grupo:O núcleo colapsa em energia instável. Todos os heróis perdem 2Pv fixo A caverna fica inutilizada — e possível fonte de magia é destruída."]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 170,
+        "name": " Memória Materializada",
+        "attack": "3 mágico em área ",
+        "buffs": ["Efeito a cada 2 turnos: o herói com maior iniciativa repete sua última ação de ataque ,se tiver falhado sofre +1 de dano."],
+        "debuffs": ["Crítico (10):Sofre o dobro de dano e fica imune ao efeito."],
+        "img": "imagens/memoria_materializada.png"
+      },
+      {
+        "id": 1700,
+        "name": "Guardião Rúnico Invertido",
+        "attack": " 3 mágico em area .",
+        "buffs": ["Efeito a cada 2 turnos: Confusão Espacial — o herói com menor iniciativa age por último no próximo turno."],
+        "debuffs": ["Crítico (10):dobro de dano e imune ao confusão espacial."],
+        "img": "imagens/guardiao_runico_invertido.png"
+      }
+    ],
+    "reward": {
+      "coins": 70,
+      "honorPoints": 2,
+      "Corrupçao": 3,
+      "items": [
+        "1 Tesouro – aleatória do baralho",
+        "Gema purpura ( APENAS AOS QUE PASSARAM NO TESTE)",
+        "Fragmento do Véu"
+      ],
+      "experience": 6
+    }
+  }
+,
+  {
+    "id": 18,
+    "name": "MISSÃO 18 – PÂNTANO DAS ALMAS",
+    "boss": [
+      {
+        "id": 181,
+        "name": "Mini-Chefe — Aparece no 3 turno Arauto dos Ecos",
+        "attack": ": 4 mágico em área Efeito 1x: Invoca 1 Eco Menor (PV 10, Dano: 1 mágico, Acerto D10 ≥ 5)",
+        "buffs": [
+          " Ataque Especial (a cada 2 turnos):Coral da Perdição — Teste de Moral (D10 ≥ 8) todos os heróis.Falha: herói perde 1 ação no próximo turno."
+        ],
+        "debuffs": [
+          "Crítico (10):: Coral é silenciado, e o Arauto sofre dobro de dano direto"
+        ],
+        "img": "imagens/arauto_dos_ecos.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 182,
+        "description": "  Terreno: Pântano Sombrio Toda cura realizada é reduzida em 1 ponto Movimento (Ação) extra  é impossível (exceto com itens especiais)",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 183,
+        "description": "  Clima: Névoa Corrompida Todos os heróis ganham +1 Corrupção automática no início da missão Testes de Percepção recebem -1",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 184,
+        "description": "Sobrevivência (Dificuldade 9): grupo.",
+        "success": [" Sucesso metade dos heróis: evitam armadilhas naturais e emboscadas"],
+        "fail": [" grupo sofre 2 de dano e ativa um inimigo extra"]
+      },
+      {
+        "id": 185,
+        "description": "Instinto (Dificuldade 8): iniciativa 6,5 e 4.",
+        "success": ["reduzem 1 Corrupção ao final da missão."],
+        "fail": ["o primeiro ataque do Arauto causa +2 de dano"]
+      }
+    ],
+    "events": [
+      {
+        "id": 185,
+        "description": "  Evento – Alma da Primeira Era (durante exploração) Teste:Percepção (D10 ≥ 7) ou magia de luz iniciativa 1,2 e 3 ",
+        "success": ["Sucesso:Libertam a alma +1 PH aos que passarem no teste"],
+        "fail": ["-"]
+      },
+      {
+        "id": 186,
+        "description": " Uso de Energia Corrompida Durante o combate, qualquer herói pode canalizar energia do pântano: Efeito:+2 em uma rolagem ataque Gera +2 Corrupção Só pode ser feito 1x por herói",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 187,
+        "description": "Evento – Tumbas Afundadas (decisão moral grupo) O grupo encontra relíquias de guerra com inscrições pedindo para não serem perturbadas.Escolhas:Saquear → +20 GP extras por herói e +1 Corrupção > Respeitar → podem realizar o Ritual com +1 no teste.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 188,
+        "description": "Evento – Ritual de Purificação (após o Arauto) Após a derrota do Arauto, os heróis podem purificar parte do pântano:Requisitos:Conhecimento ou Magia (D10 ≥ 8) grupo ",
+        "success": ["  Pântano parcialmente purificado +1 PH ao herói que passar no teste >Corrupção da área não se alastra"],
+        "fail": [" Nada acontece, e os murmúrios retornam..."]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 189,
+        "name": "Portadores do Véu Infectado",
+        "attack": "3 mágico em área Efeito 1x: Enfraquecimento — herói iniciativa maior dano de ataque diminui para - 2 ",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10):Sofre o dobro de dano e fica imune ao efeito."],
+        "img": "imagens/portadores_do_veu_infectado.png"
+      },
+      {
+        "id": 180,
+        "name": " Ecos Dissidentes",
+        "attack": "  3 mágico e área .",
+        "buffs": ["Ataque Especial a cada 3 turnos Ressonância: Efeito: Teste de Resistência (D10 ≥ 6) iniciativas 6 e 5 Falha: herói perde 3 ponto de PM no próximo turno."],
+        "debuffs": ["Crítico (10):dano em dobro e imune a ressonância."],
+        "img": "imagens/ecos_dissidentes.png"
+      }
+    ],
+    "reward": {
+      "coins": 85,
+      "honorPoints": 2,
+      "Corrupçao": 4,
+      "items": [
+        "1 Tesouro – aleatória do baralho",
+        "1 Carta de Leilão Aleatória ▸ disputa por D10",
+        "Fragmento do Véu",
+        "Gema rubra"
+      ],
+      "experience": 6
+    }
+  }
+  ,
+  {
+    "id": 19,
+    "name": " MISSÃO 19 – TORRE DE VIGIA DOS ARCANOS",
+    "boss": [
+      {
+        "id": 191,
+        "name": " Chefe: Seraphina aparece no 4 turno.",
+        "description": "Após ela ficar com menos de 30 PV ir ao Evento – Tentativa de Purificação de Seraphina.",
+        "attack": "5 mágico em área + drena 1 PM de dois heróis iniciativa maior 1x.",
+        "buffs": [
+          "  Habilidade Especial (a cada 2 turnos):Ritual da Ruína Velada – Teste de Resistência (D10 ≥ 8) todos.Falha: -2 nas próximas rolagens e + 5 de dano.."
+        ],
+        "debuffs": [
+          "Crítico (10)::  ritual interrompido, +6 de dano direto em Seraphina"
+        ],
+        "img": "imagens/seraphina.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 192,
+        "description": "   Terreno: Labirinto Arcano Teste de Conhecimento (D10 ≥ 7) Grupo",
+        "success": ["-"],
+        "fail": ["desorientação (–1 em ações)"]
+      },
+      {
+        "id": 193,
+        "description": "  Véu Instável Magias custam +3 PM ocorre 1 de dano reflexivo a cada 2 conjuração.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 194,
+        "description": "Conhecimento (Dificuldade 9): Grupo.",
+        "success": [" Sucesso metade dos heróis: enfrentam Seraphina com +1 em rolagem de ataque"],
+        "fail": ["enfrentam + 1 Clérigo Corrompido e Seraphina começa com a iniciativa"]
+      },
+      {
+        "id": 195,
+        "description": "Investigação (Dificuldade 8): Grupo",
+        "success": [" Sucesso metade dos heróis: Seraphina começa com –10 PV"],
+        "fail": ["Seraphina começa com + 10 PV"]
+      }
+    ],
+    "events": [
+      {
+        "id": 196,
+        "description": "Evento – Tentativa de Purificação de Seraphina Durante o combate, os heróis podem tentar alcançar a consciência restante de Seraphina. Requisitos: Após ela ficar com menos de 30 PV Usa 1 ação + Teste de Moral e Conhecimento (D10 ≥8 em ambos , heróis iniciativa 1,2 e 3)",
+        "success": [" ▸ Seraphina é purificada ▸ +2 PH ao herói que passar no teste ▸ Ganha um Aliado Espiritual (Seraphina poderá intervir no Final da Campanha)"],
+        "fail": [" ▸ A purificação falha ▸ Combate segue normalmente ▸ Nenhuma recompensa adiciona"]
+      },
+      {
+        "id": 197,
+        "description": " Evento – Uso do Tomo da Ruína Velada Após a batalha, os heróis encontram o Tomo da Ruína Velada, repleto de magia proibida.Escolhas: Utilizar o Tomo imediatamente ▸ Ganha bônus de +2 em magias ou ataque por 1 missão ▸ +1 Corrupção Absorver sua energia em ritual pessoal ▸ Herói aumenta em + 2 em PM e PV fixo. ▸ +2 Corrupção Recusar usar o Tomo e selar▸ +1 PH para o herói que descarta ou sela o livro",
+        "success": ["-"],
+        "fail": ["-"]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 198,
+        "name": "Clérigo Corrompido",
+        "attack": " 3 mágico em área Efeito 1x iniciativa maior: impede o uso de magias no próximo turno.",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10):Sofre o dobro de dano."],
+        "img": "imagens/clerigo_corrompido.png"
+      },
+      {
+        "id": 199,
+        "name": "Feiticeiro de Ossos",
+        "attack": "3 mágico ataque em área.",
+        "buffs": ["Habilidade especial: Terro dos mortos a cada 3 turno.Aplica Medo (Teste de Moral D10 ≥ 6) Todos ▸ Falha: o herói não age no turno seguinte"],
+        "debuffs": ["Crítico (10)::Dobro de dano e terror dos mortos se volta pra inimigo fica um turno sem semover."],
+        "img": "imagens/feiticeiro_de_ossos.png"
+      }
+    ],
+    "reward": {
+      "coins": 70,
+      "honorPoints": 3,
+      "Corrupçao": 3,
+      "items": [
+         "1  Carta de Leilão Disputa por GP",
+        "Fragmento do Véu",
+        "Gema Púrpura"
+      ],
+      "experience": 8
+    }
+  },
+   {
+    "id": 20,
+    "name": "MISSÃO 20 – FLORESTA PRATEADA",
+    "boss": [
+      {
+        "id": 201,
+        "name": " Chefe – Vel’Raath, A Voz sob a Terra, aparece após a derrotar dos inimigos.",
+        "description": "Durante o combate, todos os jogadores rolam apenas 1D10 para atacar (sem modificadores extras)",
+        "attack": "5 de dano em área,",
+        "buffs": [
+          "   Eco Abissal (a cada 3 turnos) Causa 8 de dano mágico em área Aplica Confusão por 1 turno — os jogadores só podem atacar novamente se tirarem D10 ≥ 6."
+        ],
+        "debuffs": [
+          "Crítico (10):Causa dano dobrado Ignora defesas do Vel’Raath e fica imune ao eco"
+        ],
+        "img": "imagens/VelRaath.png"
+      }
+    ],
+    "tests": [
+      {
+        "id": 202,
+        "description": " Terreno: Floresta Densa e Encantada Inimigos ocultos atacam primeiro.Testes de Percepção recebem -1.",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 203,
+        "description": "  Clima: Névoa Ilusória A cada 2 turnos, os heróis devem rolar Teste de Instinto (D10 ≥ 6) para não se desorientar",
+        "success": ["-"],
+        "fail": ["(perdem a próxima a ação de movimento se falhar"]
+      },
+      {
+        "id": 204,
+        "description": " Sobrevivência (Dificuldade 8) — Encontrar trilhas seguras e evitar áreas encantadas. Iniciativa 6,5 e4",
+        "success": ["Evitam armadilhas naturais e emboscadas."],
+        "fail": ["sofre 2 de dano e ativa inimigo extra"]
+      },
+      {
+        "id": 205,
+        "description": "Linguística (Dificuldade 9) — Ler antigas runas druídicas que podem enfraquecer o Mini-Chefe.(Grupo)",
+        "success": [" Guardião começa o combate com -10 PV."],
+        "fail": ["Iniciativa começa com o mini chefe."]
+      }
+    ],
+    "events": [
+      {
+        "id": 206,
+        "description": " Eventos Especiais Espíritos dos Druidas Caídos Durante a missão, os heróis encontram três árvores totêmicas marcadas com inscrições sagradas. Ao interagir, surge o espírito de um antigo druida emsofrimento.Teste de Moral (D10 ≥ 7): iniciativa 1,2 e 3",
+        "success": ["Libertam a alma e recebem +1 PH apenas aos heróis que passarem no teste."],
+        "fail": ["A alma se dispersa e os heróis sofrem 1 ponto de Corrupção."]
+      },
+      {
+        "id": 207,
+        "description": "  Artefatos Naturais Sagrados Em clareiras ocultas, os heróis descobrem objetos ancestrais — bastões, amuletos e raízes encantadas. Se saquearem os itens:Ganham +1 Carta de Magia extra Mas sofrem +2 Corrupção Espíritos da floresta surgem em encontros futuros (efeito narrativo)",
+        "success": ["-"],
+        "fail": ["-"]
+      },
+      {
+        "id": 208,
+        "description": "  Evento: Rito de Restauração Durante a travessia, os heróis encontram um círculo de pedras musgosas coberto por raízes vivas uma voz sussurrante ecoa nas árvores:A floresta ainda pode respirar... se os portadores do Véu oferecerem algo puro.Todos os heróis precisam fazer o rito. É necessário gastar 1 Selo de Purificação ou 1 Gema Azul cada herói.Em seguida, deve passar em um Teste de Instinto ou Conhecimento (D10 ≥ 7). ",
+        "success": ["A névoa se dissipa brevemente, flores brotam do solo e as árvores cessam seus sussurros de dor.O grupo recebe +2 PH como reconhecimento espiritual dos druidas esquecidos. A floresta não gera encontros extras até o final da misão."],
+        "fail": [" A energia não é canalizada corretamente; o item é consumido, mas nenhum efeito ocorre. Nada é ganho, e a floresta permanece instável."]
+      }
+    ],
+    "monsters": [
+      {
+        "id": 209,
+        "name": "Arraigado Vivo",
+        "attack": "  3 de dano físico em area.",
+        "buffs": [" Habilidade especial: a cada 2 turnos Raízes vivas: Ataque em área.Teste de Físico (D10 ≥ 6).Falha: Imobilizado por 1 turno (não pode se mover nem esquivar)."],
+        "debuffs": ["Crítico (10)::dano em dobro ,imune a raízes vivas."],
+        "img": "imagens/arraigado_vivo.png"
+      },
+      {
+        "id": 200,
+        "name": "Semente Lamentante ",
+        "attack": ":2 de dano mágico em área Aplica Sono 1x — o herói iniciativa 6 perde a ação no turno seguinte.",
+        "buffs": ["-"],
+        "debuffs": ["Crítico (10):dano em dobro , efeito sono é aplicado no inimigo fica uma rodada sem ação."],
+        "img": "imagens/semente_lamentante.png"
+      }
+    ],
+    "reward": {
+      "coins": 75,
+      "honorPoints": 3,
+      "Corrupçao": 3,
+      "items": [
+         "1  Carta de Leilão Disputa por GP",
+        "1 Tesouro Aleatório",
+        "1 Carta de Magia aleatória",
+        " Gema Dourada"
+      ],
+      "experience": 6
+    }
+  }
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
