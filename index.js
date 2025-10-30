@@ -14,6 +14,7 @@ fetch("missoes.json")
   })
   .then(data => {
     missions = data;
+     missions.sort((a, b) => a.id - b.id);
 
     // Adiciona as missões no select
     missions.forEach(mission => {
@@ -301,3 +302,4 @@ function bindCheckboxListeners() {
 missionSelect.addEventListener("change", (e) => {
   renderMission(e.target.value);
 });
+
